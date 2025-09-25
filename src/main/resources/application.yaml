@@ -4,3 +4,15 @@ spring:
 
 server:
   port: 9025
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  packages-to-scan: cn.mairuf.shizhong.controller
+  paths-to-match: /api/**
+
+api:
+  version:
+    # noinspection SpringBootApplicationYaml
+    prefix: /api/v1

@@ -1,0 +1,17 @@
+services:
+  chroma:
+    image: chromadb/chroma:0.4.15
+    container_name: chroma
+    ports:
+      - "18005:8000"
+    environment:
+      - CHROMA_SERVER_HOST=0.0.0.0
+      - CHROMA_SERVER_HTTP_PORT=8000
+      # - CHROMA_SERVER_ENABLE_HTTP=true
+      - CHROMA_SERVER_AUTHN_PROVIDER=chromadb.authn.providers.NoopAuthenticationProvider
+    volumes:
+      - chroma_data:/var/lib/chroma
+    restart: unless-stopped
+
+volumes:
+  chroma_data:

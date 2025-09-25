@@ -19,10 +19,12 @@
 
     <properties>
         <java.version>21</java.version>
+        <springdoc.version>1.8.0</springdoc.version>
         <!-- 统一管理第三方依赖版本 -->
         <postgresql.version>42.7.4</postgresql.version>
         <lombok.version>1.18.34</lombok.version>
-        <langchain4j.version>0.28.0</langchain4j.version>
+        <langchain4j.version>1.5.0</langchain4j.version>
+        <langchain4j-component.version>1.5.0-beta11</langchain4j-component.version>
         <!-- 文件处理 -->
         <tika.version>3.2.3</tika.version>
     </properties>
@@ -45,6 +47,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- openapi 文档依赖 -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc.version}</version>
         </dependency>
 
         <!-- postgresql数据库 -->
@@ -74,6 +83,40 @@
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-parsers-standard-package</artifactId>
             <version>${tika.version}</version>
+        </dependency>
+
+        <!-- LangChain4j 核心 -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j</artifactId>
+            <version>${langchain4j.version}</version>
+        </dependency>
+
+        <!-- Chroma 向量库 -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-chroma</artifactId>
+            <version>${langchain4j-component.version}</version>
+        </dependency>
+
+        <!-- Easy RAG 模块 -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-easy-rag</artifactId>
+            <version>${langchain4j-component.version}</version>
+        </dependency>
+
+        <!-- 本地嵌入模型（无需网络） -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-embeddings</artifactId>
+            <version>${langchain4j-component.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-embeddings-all-minilm-l6-v2</artifactId>
+            <version>${langchain4j-component.version}</version>
         </dependency>
 
     </dependencies>
