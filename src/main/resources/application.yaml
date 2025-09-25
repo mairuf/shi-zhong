@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: shi-zhong
+
+server:
+  port: 9025
